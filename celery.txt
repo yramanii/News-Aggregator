@@ -1,0 +1,16 @@
+The current running worker does not get the updated changes from the function, So we need to stop the worker and run again.
+
+"celery -A baseapp worker --beat --scheduler django --loglevel=info"
+
+
+FOR WINDOWS:
+
+WORKER:
+
+celery -A "project_name" worker -l info
+
+celery -A project worker --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair --pool=solo
+
+
+BEAT:
+celery -A "project_name" beat --loglevel=info / -l info
